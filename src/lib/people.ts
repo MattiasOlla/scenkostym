@@ -3,23 +3,36 @@ export type Person = {
   email?: string;
   instagram?: string;
   imageUrl?: string;
+  website?: string;
 };
 
 export const people = [
   {
-    name: "Jane Doe",
-    email: "jane.doe@example.com",
-    instagram: "janedoe",
-    imageUrl: "/images/Cato.jpeg",
+    name: "Klara Lemurell",
+    email: "klara.lemurell[at]gmail.com",
+    instagram: "lemurelldesign",
   },
   {
-    name: "Mike Smith",
-    email: "mike.smith@example.com",
-    instagram: "mikesmith",
+    name: "Hanna Törnqvist",
+    email: "hanna.halmstad[at]hotmail.com",
+    instagram: "madebytornqvist",
   },
+  { name: "Lisa Cannatelli", instagram: "la_sarta_lisa", email: "lisa.cannatelli[at]gmail.com" },
+  { name: "Alice Tångemar", email: "Spralicen03[at]gmail.com", instagram: "Designbyspralicen" },
+  { name: "Emilie Rusvik", instagram: "emilys_creations", email: "asemiru[at]gmail.com" },
+  { name: "S. M.", instagram: "sewnday_morning" },
+  { name: "Lisa Johansson", instagram: "twine_theory", email: "lisjoh00[at]gmail.com" },
+  { name: "Emmaly Beetson", email: "Emmalyb[at]live.dk", instagram: "Emmalybeetson" },
   {
-    name: "Anna Lee",
-    email: "anna.lee@example.com",
-    instagram: "annalee",
+    name: "Marianne Ljungberg",
+    email: "marianneljungberg94[at]gmail.com",
+    instagram: "m.arianne_ljungberg",
+  },
+  { name: "Cornelia Edman", email: "cornelia.edman[at]gmail.com", instagram: "madebyedman" },
+  {
+    name: "Sly Wolters",
+    instagram: "sly_design_swe",
+    website: "https://slywolters.com",
+    email: "sly.wolters[at]gmail.com",
   },
 ] as const satisfies Person[];

@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Person } from "../lib/people";
 
-  let { name, email, instagram, imageUrl }: Person = $props();
+  let { name, email: emailInput, instagram, website, imageUrl }: Person = $props();
 
+  const email = emailInput?.replace("[at]", "@");
   const initials = name
     .split(" ")
     .map((s) => s[0])
@@ -24,11 +25,6 @@
   <div class="profile-content">
     <h2 class="name">{name}</h2>
     <div class="social-links">
-      {#if email}
-        <a href="mailto:{email}" class="social-link email" title="Email {name}" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      {/if}
       {#if instagram}
         <a
           href="https://instagram.com/{instagram}"
@@ -39,6 +35,23 @@
           aria-label="Instagram"
         >
           <i class="fab fa-instagram"></i>
+        </a>
+      {/if}
+      {#if email}
+        <a href="mailto:{email}" class="social-link email" title="Email {name}" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      {/if}
+      {#if website}
+        <a
+          href={website}
+          class="social-link website"
+          title="{name}'s website"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Website"
+        >
+          <i class="fa fa-globe"></i>
         </a>
       {/if}
     </div>
@@ -147,6 +160,10 @@
 
   .social-link.instagram {
     background: linear-gradient(135deg, #f093fb, #f5576c);
+  }
+
+  .social-link.website {
+    background: linear-gradient(135deg, #2dca3b, #156019);
   }
 
   .social-link:hover {
