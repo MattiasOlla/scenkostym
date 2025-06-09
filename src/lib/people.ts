@@ -49,6 +49,7 @@ export const people = [
     name: "Marianne Ljungberg",
     email: "marianneljungberg94[at]gmail.com",
     instagram: "m.arianne_ljungberg",
+    imageUrl: "/images/marianne.jpg",
   },
   {
     name: "Cornelia Edman",
